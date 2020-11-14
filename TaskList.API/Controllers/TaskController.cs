@@ -92,7 +92,7 @@ namespace TaskList.API.Controllers
         public ActionResult<TaskDto> UpdateTask(
             [FromBody] TaskResourceParameter taskParameter)
         {
-            if (!_userRepository.UserExists(userId))
+            if (!_userRepository.UserExists(taskParameter.UserId))
             {
                 return NotFound();
             }
